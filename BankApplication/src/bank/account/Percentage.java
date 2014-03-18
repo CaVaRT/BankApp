@@ -1,7 +1,9 @@
 
 package bank.account;
 
-import java.util.Timer;
+import bank.technical.Timer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Percentage {
 
@@ -19,6 +21,11 @@ public class Percentage {
         //if(timer.getTime() == 12){
         count = (balance / 100) * 11;
         //}
+        try {
+            timer.startTime();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Deposit.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public double getCountPercentage() {

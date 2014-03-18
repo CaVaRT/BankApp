@@ -1,8 +1,10 @@
 package bank.account;
 
 import bank.client.Customer;
-//import bankapp.Timer;
+import bank.technical.Timer;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Deposit extends Account {
 
@@ -16,7 +18,7 @@ public class Deposit extends Account {
 
     @Override
     public void moneyIn(double in, Customer c) {
-        //timer.getTime();
+        
         balance = balance + in;
         percentage = new Percentage(in, count);
         list.add(percentage);
@@ -25,6 +27,7 @@ public class Deposit extends Account {
         System.out.println("MoneyIn " + c.getName() + " " + in);
         System.out.println("Percent of contract " + getPercent() + "%");
         System.out.println("Money of percent " + getCountPercentage());
+        
     }
 
     // @Override
