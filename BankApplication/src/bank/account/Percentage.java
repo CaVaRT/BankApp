@@ -8,7 +8,7 @@ public class Percentage {
 
     private double count;
     private double balance;
-    String month;
+    private String month;
     Timer timer = new Timer();
 
     Percentage(double b, double c, String m) {
