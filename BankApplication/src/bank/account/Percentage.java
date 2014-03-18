@@ -9,23 +9,25 @@ public class Percentage {
 
     private double count;
     private double balance;
+    String month;
     Timer timer = new Timer();
 
-    Percentage(double b, double c) {
+    Percentage(double b, double c, String m) {
         this.balance = b;
         this.count = c;
+        this.month = m;
         percentage();
     }
 
     private void percentage() {
         //if(timer.getTime() == 12){
-        count = (balance / 100) * 11;
-        //}
         try {
-            timer.startTime();
+            timer.startTime(month);
         } catch (InterruptedException ex) {
             Logger.getLogger(Deposit.class.getName()).log(Level.SEVERE, null, ex);
         }
+        count = (balance / 100) * 11;
+        //}
     }
     
     public double getCountPercentage() {

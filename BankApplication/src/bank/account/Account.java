@@ -1,6 +1,7 @@
 package bank.account;
 
 import bank.client.Customer;
+import bank.technical.Timer;
 
 public abstract class Account {
 
@@ -10,6 +11,6 @@ public abstract class Account {
 
     abstract double getPercent();
 
-    abstract void moneyIn(double in, Customer c);
+    abstract void moneyIn(double in, Customer c, String m);
 
 }

@@ -12,7 +12,7 @@ public class BankApp {
         dataCustomers.put(1, alex);
         dataCustomers.put(2, diana);
 
-        alex.deposit.moneyIn(200, alex);
+        alex.deposit.moneyIn(200, alex, "Feb");
         //diana.deposit.moneyIn(250, diana);
         //alex.deposit.moneyIn(300, alex);
 

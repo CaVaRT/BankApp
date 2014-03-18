@@ -3,8 +3,7 @@ package bank.account;
 import bank.client.Customer;
 import bank.technical.Timer;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class Deposit extends Account {
 
@@ -17,17 +16,15 @@ public class Deposit extends Account {
     List<Percentage> list = new LinkedList();
 
     @Override
-    public void moneyIn(double in, Customer c) {
-        
+    public void moneyIn(double in, Customer c, String m) {
         balance = balance + in;
-        percentage = new Percentage(in, count);
-        list.add(percentage);
-
         System.out.println(" ");
         System.out.println("MoneyIn " + c.getName() + " " + in);
         System.out.println("Percent of contract " + getPercent() + "%");
+        percentage = new Percentage(in, count, m);
+        list.add(percentage);
         System.out.println("Money of percent " + getCountPercentage());
-        
+        System.out.println("Your bonus " + bonus() + "%");
     }
 
     // @Override
@@ -39,8 +36,8 @@ public class Deposit extends Account {
     //private void percentage() {
     //  count = (balance / 100) * 11;
     //}
-    private double bonus() {
-        double bonus = Math.random() * 3;
+    private int bonus() {
+        int bonus = (int) Math.round(Math.random() * 3);
         return bonus;
     }
 

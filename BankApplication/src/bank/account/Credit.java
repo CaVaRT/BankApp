@@ -10,7 +10,7 @@ public class Credit extends Account {
     public final double normaBalance = 1000;
 
     @Override
-    public void moneyIn(double in, Customer c) {
+    public void moneyIn(double in, Customer c, String m) {
         balance = balance + in;
     }
 
