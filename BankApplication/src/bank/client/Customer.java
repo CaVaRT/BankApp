@@ -18,8 +18,6 @@ public class Customer {
         System.out.println(this.name);
         System.out.println("Info Deposit");
         System.out.println("Balance " + deposit.getBalance());
-        //System.out.println("Percent of contract " + deposit.getPercent() + "%");
-        //System.out.println("Money of percent " + deposit.getCountPercentage());
         System.out.println("Final balance " + deposit.getFinalBalance());
 
     }
@@ -28,7 +26,6 @@ public class Customer {
         System.out.println(" ");
         System.out.println("Info Credit");
         System.out.println(this.name);
-        //System.out.println("Normal Balance " + credit.normaBalance);
         System.out.println("Balance " + credit.getBalance());
         System.out.println("Money in should " + (credit.normaBalance - credit.getBalance()));
         System.out.println("Percent of contract " + credit.getPercent());

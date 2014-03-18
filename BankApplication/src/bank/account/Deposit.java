@@ -4,12 +4,12 @@ import bank.client.Customer;
 import bank.technical.Timer;
 import java.util.*;
 
-
 public class Deposit extends Account {
 
     private double percent = 11;
     private double count;
     protected double balance;
+    private int bonus;
     Percentage percentage;
     Customer customer;
     Timer timer = new Timer();
@@ -19,7 +19,7 @@ public class Deposit extends Account {
     public void moneyIn(double in, Customer c, String m) {
         balance = balance + in;
         System.out.println(" ");
-        System.out.println("MoneyIn " + c.getName() + " " + in);
+        System.out.println("MoneyIn " + c.getName() + " " + in + " on " + m);
         System.out.println("Percent of contract " + getPercent() + "%");
         percentage = new Percentage(in, count, m);
         list.add(percentage);
@@ -27,17 +27,12 @@ public class Deposit extends Account {
         System.out.println("Your bonus " + bonus() + "%");
     }
 
-    // @Override
     public void moneyOut(double out) {
         balance = balance - out;
-        //percentage();
     }
 
-    //private void percentage() {
-    //  count = (balance / 100) * 11;
-    //}
     private int bonus() {
-        int bonus = (int) Math.round(Math.random() * 3);
+        bonus = (int) Math.round(Math.random() * 3);
         return bonus;
     }
 
@@ -62,7 +57,7 @@ public class Deposit extends Account {
             tmp = x.getCountPercentage();
             sum = sum + tmp;
         }
-        return sum + balance;
+        return sum + balance + ((balance / 100) * bonus);
     }
 
 }

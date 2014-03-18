@@ -20,16 +20,12 @@ public class Percentage {
         } catch (InterruptedException ex) {
             Logger.getLogger(Deposit.class.getName()).log(Level.SEVERE, null, ex);
         }
-        percentage(timer.getI());
+        percentage(timer.getMonthNumber());
     }
 
     private void percentage(int i) {
-        System.out.println("Timer " + timer.getI());
-        //if(timer.getTime() == 12){
-        
         count = (balance / 100) * 11;
         count = (count / 12) * i;
-        //}
     }
 
     public double getCountPercentage() {

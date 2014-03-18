@@ -7,62 +7,59 @@ public class Timer {
     public int startTime(String month) throws InterruptedException {
 
         int i = 0;
-        
+
         switch (month) {
             case "January":
-                i = 1;
+                i = 12;
                 break;
             case "February":
-                i = 2;
-                break;
-            case "March":
-                i = 3;
-                break;
-            case "April":
-                i = 4;
-                break;
-            case "May":
-                i = 5;
-                break;
-            case "June":
-                i = 6;
-                break;
-            case "July":
-                i = 7;
-                break;
-            case "August":
-                i = 8;
-                break;
-            case "September":
-                i = 9;
-                break;
-            case "October":
-                i = 10;
-                break;
-            case "November":
                 i = 11;
                 break;
+            case "March":
+                i = 10;
+                break;
+            case "April":
+                i = 9;
+                break;
+            case "May":
+                i = 8;
+                break;
+            case "June":
+                i = 7;
+                break;
+            case "July":
+                i = 6;
+                break;
+            case "August":
+                i = 5;
+                break;
+            case "September":
+                i = 4;
+                break;
+            case "October":
+                i = 3;
+                break;
+            case "November":
+                i = 2;
+                break;
             case "December":
-                i = 12;
+                i = 1;
                 break;
         }
 
-        i = 13 - i;
+       // i = 13 - i;
         monthNumber = i;
 
         while (i < 13) {
             if (i < 13) {
-                Thread.sleep(1000);
-                System.out.println(i);
+                Thread.sleep(100);
             }
             i++;
-        }      
+        }
         return monthNumber;
     }
-    
 
-    public int getI() {
-        System.out.println("month2 " + monthNumber);
+    public int getMonthNumber() {
         return monthNumber;
     }
 
